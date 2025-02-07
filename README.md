@@ -1,4 +1,4 @@
-# 📄 Project: Bidding Document Extraction and Analysis with BERT
+# Project: Bidding Document Extraction and Analysis with BERT
 
 ## 📌 Description
 This project leverages **Natural Language Processing (NLP) with BERT** to extract, segment, and analyze bidding documents in Spanish. The workflow includes:
@@ -10,7 +10,7 @@ This project leverages **Natural Language Processing (NLP) with BERT** to extrac
 
 ## Installation
 
-### **3️🚀 Install dependencies**
+### **🚀 Install dependencies**
 ```bash
 $ pip install -r requirements.txt
 ```
