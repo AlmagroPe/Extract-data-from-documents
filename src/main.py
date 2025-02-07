@@ -36,7 +36,7 @@ def main():
             bert_qa = BERTQA(use_finetuned=False)
 
         # 6. Preguntas clave con contexto optimizado
-        preguntas = {
+        questions = {
             "valor_estimado_bert": {
                 "pregunta": "¿Cuál es el valor estimado exacto del contrato en euros?",
                 "contexto": sections.get("objeto_contrato", pdf_text)
@@ -55,14 +55,14 @@ def main():
         # 7. Procesar preguntas con BERT
         bert_responses = {}
         print("\n🔎 Analizando con BERT:")
-        for key, config in preguntas.items():
-            respuesta = bert_qa.answer(
+        for key, config in questions.items():
+            answer = bert_qa.answer(
                 context=config["contexto"],
                 question=config["pregunta"]
             )
             bert_responses[key] = {
-                "respuesta": respuesta.get("answer", "No encontrado"),
-                "confianza": f"{respuesta.get('score', 0):.1%}" if 'score' in respuesta else "N/A"
+                "respuesta": answer.get("answer", "No encontrado"),
+                "confianza": f"{answer.get('score', 0):.1%}" if 'score' in answer else "N/A"
             }
             print(f"• {config['pregunta']}: {bert_responses[key]['respuesta']} ({bert_responses[key]['confianza']})")
 
@@ -79,7 +79,6 @@ def main():
         consistency_report = []
         for field in ["valor_estimado", "cpv"]:
             bert_key = f"{field}_bert"
-            print(bert_key)
             if bert_key not in final_data:
                 print(f"❌ Error crítico: '{bert_key}' no encontrado en final_data")
                 print("🔧 Revise los logs y valide el formato del PDF")
