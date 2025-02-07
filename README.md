@@ -8,16 +8,12 @@ This project leverages **Natural Language Processing (NLP) with BERT** to extrac
 - **Using BERT to answer key questions** about the document.
 - **Training a BERT model specialized in bidding documents**.
 
----
-
 ## Installation
 
 ### **3️🚀 Install dependencies**
 ```bash
 $ pip install -r requirements.txt
 ```
-
----
 
 ## 📂 Project Structure
 ```plaintext
@@ -38,17 +34,15 @@ $ pip install -r requirements.txt
 └── README.md                         # Documentation
 ```
 
----
-
 ## 🔧 How to Use
 
-### **2️Train a Custom BERT Model**
+### **Train a Custom BERT Model**
 ```bash
 $ python train_bert.py
 ```
 This will train a **Spanish BERT model** using the dataset from `data/training_dataset.json`.
 
-### **1️Process a PDF Document**
+### **Process a PDF Document**
 ```bash
 $ python main.py
 ```
@@ -59,13 +53,12 @@ This will execute the full pipeline:
 - Use BERT to answer key questions about the document.
 - Save results in `output/bidding_data.csv`.
 
-### **3️Evaluate the Model**
+### **Evaluate the Model**
 ```bash
 $ python validation.py
 ```
 This script evaluates the performance of the fine-tuned model.
 
----
 
 ## 🧠 Technologies Used
 - **Python 3.8+**
@@ -73,7 +66,6 @@ This script evaluates the performance of the fine-tuned model.
 - **Pandas** (handling extracted data)
 - **PyPDF2** (extracting text from PDF)
 
----
 
 ## 📌 Future Improvements
 - Enhance text segmentation using **transformers** instead of regex.
