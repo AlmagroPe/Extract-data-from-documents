@@ -10,20 +10,9 @@ This project leverages **Natural Language Processing (NLP) with BERT** to extrac
 
 ---
 
-## 🚀 Installation
-### **1️⃣ Clone the repository**
-```bash
-$ git clone https://github.com/user/bidding-bert-project.git
-$ cd bidding-bert-project
-```
+## Installation
 
-### **2️⃣ Create a virtual environment** (optional but recommended)
-```bash
-$ python3 -m venv env
-$ source env/bin/activate  # On Windows: env\Scripts\activate
-```
-
-### **3️⃣ Install dependencies**
+### **3️🚀 Install dependencies**
 ```bash
 $ pip install -r requirements.txt
 ```
@@ -44,7 +33,7 @@ $ pip install -r requirements.txt
 │   ├── train_bert.py                # BERT training script
 │   ├── validation.py                # Model validation
 │   ├── config.py                    # Configuration
-├── main.py                          # Main script
+│   ├── main.py                      # Main script
 ├── requirements.txt                  # Project dependencies
 └── README.md                         # Documentation
 ```
@@ -52,26 +41,27 @@ $ pip install -r requirements.txt
 ---
 
 ## 🔧 How to Use
-### **1️⃣ Process a PDF Document**
+
+### **2️Train a Custom BERT Model**
+```bash
+$ python train_bert.py
+```
+This will train a **Spanish BERT model** using the dataset from `data/training_dataset.json`.
+
+### **1️Process a PDF Document**
 ```bash
 $ python main.py
 ```
 This will execute the full pipeline:
-- Extract text from `data/ExampleBidding.pdf`.
+- Extract text from `data/EjemploLicitacion.pdf`.
 - Segment the content.
 - Apply regex to extract structured data.
 - Use BERT to answer key questions about the document.
 - Save results in `output/bidding_data.csv`.
 
-### **2️⃣ Train a Custom BERT Model**
+### **3️Evaluate the Model**
 ```bash
-$ python src/train_bert.py
-```
-This will train a **Spanish BERT model** using the dataset from `data/training_dataset.json`.
-
-### **3️⃣ Evaluate the Model**
-```bash
-$ python src/validation.py
+$ python validation.py
 ```
 This script evaluates the performance of the fine-tuned model.
 
@@ -89,9 +79,3 @@ This script evaluates the performance of the fine-tuned model.
 - Enhance text segmentation using **transformers** instead of regex.
 - Optimize answer alignment in `train_bert.py`.
 - Expand the dataset with more bidding documents.
-
----
-
-## 📩 Contact
-If you have any questions or suggestions, feel free to open an issue or submit a pull request! 🚀
-
